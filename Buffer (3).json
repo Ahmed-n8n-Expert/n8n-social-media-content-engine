@@ -1,0 +1,548 @@
+{
+  "name": "Buffer",
+  "nodes": [
+    {
+      "parameters": {
+        "endpointUrl": "https://mcp.buffer.com/mcp",
+        "authentication": "bearerAuth",
+        "tool": {
+          "__rl": true,
+          "value": "create_post",
+          "mode": "list",
+          "cachedResultName": "create_post"
+        },
+        "parameters": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "channelId": "69fb455f5c4c051afa17af88",
+            "schedulingType": "automatic",
+            "mode": "shareNow",
+            "text": "={{ $json.caption_text }}",
+            "assets": "=[\n  {\n    \"image\": {\n      \"url\": \"{{ $json.news_image }}\"\n    }\n  }\n]"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "channelId",
+              "displayName": "channelId",
+              "defaultMatch": false,
+              "required": true,
+              "display": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "schedulingType",
+              "displayName": "schedulingType",
+              "defaultMatch": false,
+              "required": true,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "notification",
+                  "value": "notification"
+                },
+                {
+                  "name": "automatic",
+                  "value": "automatic"
+                }
+              ],
+              "removed": false
+            },
+            {
+              "id": "mode",
+              "displayName": "mode",
+              "defaultMatch": false,
+              "required": false,
+              "display": true,
+              "type": "options",
+              "options": [
+                {
+                  "name": "addToQueue",
+                  "value": "addToQueue"
+                },
+                {
+                  "name": "shareNow",
+                  "value": "shareNow"
+                },
+                {
+                  "name": "shareNext",
+                  "value": "shareNext"
+                },
+                {
+                  "name": "customScheduled",
+                  "value": "customScheduled"
+                },
+                {
+                  "name": "recommendedTime",
+                  "value": "recommendedTime"
+                }
+              ],
+              "removed": false
+            },
+            {
+              "id": "text",
+              "displayName": "text",
+              "defaultMatch": false,
+              "required": false,
+              "display": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "dueAt",
+              "displayName": "dueAt",
+              "defaultMatch": false,
+              "required": false,
+              "display": true,
+              "type": "string",
+              "removed": true
+            },
+            {
+              "id": "tagIds",
+              "displayName": "tagIds",
+              "defaultMatch": false,
+              "required": false,
+              "display": true,
+              "type": "array",
+              "defaultValue": "[\n  \"string\"\n]",
+              "removed": true
+            },
+            {
+              "id": "assets",
+              "displayName": "assets",
+              "defaultMatch": false,
+              "required": false,
+              "display": true,
+              "type": "array",
+              "defaultValue": "[\n  {\n    \"image\": {\n      \"url\": \"string\",\n      \"thumbnailUrl\": \"string\",\n      \"metadata\": {\n        \"altText\": \"string\",\n        \"animatedThumbnail\": \"string\",\n        \"userTags\": [\n          {\n            \"handle\": \"string\",\n            \"x\": 0,\n            \"y\": 0\n          }\n        ],\n        \"dimensions\": {\n          \"width\": 0,\n          \"height\": 0\n        }\n      }\n    }\n  }\n]",
+              "removed": false
+            },
+            {
+              "id": "metadata",
+              "displayName": "metadata",
+              "defaultMatch": false,
+              "required": false,
+              "display": true,
+              "type": "object",
+              "defaultValue": "{\n  \"instagram\": {\n    \"type\": \"story\",\n    \"link\": \"string\",\n    \"geolocation\": {\n      \"id\": \"string\",\n      \"text\": \"string\"\n    },\n    \"shouldShareToFeed\": false,\n    \"stickerFields\": {\n      \"text\": \"string\"\n    }\n  },\n  \"facebook\": {\n    \"type\": \"post\",\n    \"annotations\": [\n      {\n        \"content\": \"string\",\n        \"indices\": [\n          0\n        ],\n        \"text\": \"string\",\n        \"url\": \"string\"\n      }\n    ],\n    \"linkAttachment\": {\n      \"url\": \"string\"\n    }\n  },\n  \"linkedin\": {\n    \"annotations\": [\n      {\n        \"id\": \"string\",\n        \"link\": \"string\",\n        \"entity\": \"string\",\n        \"vanityName\": \"string\",\n        \"localizedName\": \"string\",\n        \"start\": 0,\n        \"length\": 0\n      }\n    ],\n    \"linkAttachment\": {\n      \"url\": \"string\"\n    }\n  },\n  \"twitter\": {\n    \"retweet\": {\n      \"id\": \"string\"\n    },\n    \"thread\": [\n      {\n        \"text\": \"string\",\n        \"assets\": [\n          {\n            \"image\": {\n              \"url\": \"string\",\n              \"thumbnailUrl\": \"string\",\n              \"metadata\": {\n                \"altText\": \"string\",\n                \"animatedThumbnail\": \"string\",\n                \"userTags\": [\n                  {\n                    \"handle\": \"string\",\n                    \"x\": 0,\n                    \"y\": 0\n                  }\n                ],\n                \"dimensions\": {\n                  \"width\": 0,\n                  \"height\": 0\n                }\n              }\n            }\n          }\n        ]\n      }\n    ]\n  },\n  \"pinterest\": {\n    \"title\": \"string\",\n    \"url\": \"string\",\n    \"boardServiceId\": \"string\"\n  },\n  \"google\": {\n    \"type\": \"event\",\n    \"title\": \"string\",\n    \"detailsOffer\": {\n      \"title\": \"string\",\n      \"startDate\": \"string\",\n      \"endDate\": \"string\",\n      \"code\": \"string\",\n      \"link\": \"string\",\n      \"terms\": \"string\"\n    },\n    \"detailsEvent\": {\n      \"title\": \"string\",\n      \"startDate\": \"string\",\n      \"endDate\": \"string\",\n      \"isFullDayEvent\": false,\n      \"button\": \"none\",\n      \"link\": \"string\"\n    },\n    \"detailsWhatsNew\": {\n      \"button\": \"none\",\n      \"link\": \"string\"\n    }\n  },\n  \"youtube\": {\n    \"title\": \"string\",\n    \"categoryId\": \"string\",\n    \"privacy\": \"public\",\n    \"license\": \"youtube\",\n    \"notifySubscribers\": false,\n    \"embeddable\": false,\n    \"madeForKids\": false\n  },\n  \"mastodon\": {\n    \"thread\": [\n      {\n        \"text\": \"string\",\n        \"assets\": [\n          {\n            \"image\": {\n              \"url\": \"string\",\n              \"thumbnailUrl\": \"string\",\n              \"metadata\": {\n                \"altText\": \"string\",\n                \"animatedThumbnail\": \"string\",\n                \"userTags\": [\n                  {\n                    \"handle\": \"string\",\n                    \"x\": 0,\n                    \"y\": 0\n                  }\n                ],\n                \"dimensions\": {\n                  \"width\": 0,\n                  \"height\": 0\n                }\n              }\n            }\n          }\n        ]\n      }\n    ],\n    \"spoilerText\": \"string\"\n  },\n  \"startPage\": {\n    \"link\": \"string\"\n  },\n  \"threads\": {\n    \"type\": \"post\",\n    \"thread\": [\n      {\n        \"text\": \"string\",\n        \"assets\": [\n          {\n            \"image\": {\n              \"url\": \"string\",\n              \"thumbnailUrl\": \"string\",\n              \"metadata\": {\n                \"altText\": \"string\",\n                \"animatedThumbnail\": \"string\",\n                \"userTags\": [\n                  {\n                    \"handle\": \"string\",\n                    \"x\": 0,\n                    \"y\": 0\n                  }\n                ],\n                \"dimensions\": {\n                  \"width\": 0,\n                  \"height\": 0\n                }\n              }\n            }\n          }\n        ]\n      }\n    ],\n    \"linkAttachment\": {\n      \"url\": \"string\"\n    },\n    \"topic\": \"string\",\n    \"locationId\": \"string\",\n    \"locationName\": \"string\"\n  },\n  \"bluesky\": {\n    \"thread\": [\n      {\n        \"text\": \"string\",\n        \"assets\": [\n          {\n            \"image\": {\n              \"url\": \"string\",\n              \"thumbnailUrl\": \"string\",\n              \"metadata\": {\n                \"altText\": \"string\",\n                \"animatedThumbnail\": \"string\",\n                \"userTags\": [\n                  {\n                    \"handle\": \"string\",\n                    \"x\": 0,\n                    \"y\": 0\n                  }\n                ],\n                \"dimensions\": {\n                  \"width\": 0,\n                  \"height\": 0\n                }\n              }\n            }\n          }\n        ]\n      }\n    ],\n    \"linkAttachment\": {\n      \"url\": \"string\"\n    }\n  },\n  \"tiktok\": {\n    \"title\": \"string\"\n  }\n}",
+              "removed": true
+            },
+            {
+              "id": "saveToDraft",
+              "displayName": "saveToDraft",
+              "defaultMatch": false,
+              "required": false,
+              "display": true,
+              "type": "boolean",
+              "removed": true
+            },
+            {
+              "id": "ideaId",
+              "displayName": "ideaId",
+              "defaultMatch": false,
+              "required": false,
+              "display": true,
+              "type": "string",
+              "removed": true
+            },
+            {
+              "id": "draftId",
+              "displayName": "draftId",
+              "defaultMatch": false,
+              "required": false,
+              "display": true,
+              "type": "string",
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "convertToBinary": false
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpClient",
+      "typeVersion": 1,
+      "position": [
+        832,
+        384
+      ],
+      "id": "5e324fb0-32d6-4756-8846-7d0168a6bf94",
+      "name": "MCP Client",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "CmX8hzsOKxxLojQ8",
+          "name": "Bearer Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o",
+          "mode": "list",
+          "cachedResultName": "GPT-4O"
+        },
+        "responses": {
+          "values": [
+            {
+              "content": "=أنت خبير محتوى رقمي متخصص في الشأن الصناعي العماني. مهمتك هي اختيار الخبر الأهم من القائمة التالية وصياغة منشور احترافي لمنصات التواصل الاجتماعي.\n\n\"معك قائمة بالأخبار الحالية وقائمة بالروابط التي تم نشرها سابقاً (من Google Sheet). قم باختيار رابط واحد فقط من الأخبار الحالية لم يسبق نشره نهائياً. إذا كانت كل الأخبار قد نشرت من قبل، لا تقم باختيار أي شيء.\"\n\nقائمة الأخبار:\n{{ JSON.stringify($input.all().map(i => i.json)) }}\n\nمصفوفة الصور المتاحة:\n{{ JSON.stringify($('HTML').item.json.Image) }}\n\nمعايير اختيار الخبر:\n\nأولوية قصوى: افتتاح مصانع، تدشين خطوط إنتاج، توقيع اتفاقيات استثمارية.\n\nأولوية ثانية: أحدث خبر تنموي إيجابي.\n\nممنوع: أخبار النعي أو التعازي أو القرارات الإدارية الداخلية.\n\nالمخرجات المطلوبة (Return ONLY a JSON object):\nيجب أن يكون الرد JSON فقط يحتوي على:\n\n\"selected_link\": رابط الخبر الذي تم اختياره (موجود في خانة Link).\n\n\"news_image\": رابط الصورة المناسب للخبر.\n(قاعدة ذهبية: اختر الصورة التي ترتيبها يطابق ترتيب الخبر المختار من مصفوفة الصور المتاحة أعلاه).\n\n\"caption_text\": نص المنشور كاملاً ويحتوي على:\n\nتحية مهذبة.\n\nملخص مشوق باللهجة العمانية البيضاء.\n\nاستخدام Emojis (صناعة، علم عمان).\n\nالهاشتاجات في النهاية: #جمعية_الصناعيين_العمانية #صناعة_عمانية #عمان #رؤية_عمان_2040.\n\nالخاتمة الإلزامية: \"دامت الصناعة العمانية في رفعة وتقدم\".\n\n\"news_headline\": عنوان قصير جداً للخبر."
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.1,
+      "position": [
+        -48,
+        384
+      ],
+      "id": "99534c77-1e1a-40dc-bf9b-bf74a5e72e86",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "8FchnRRbkOizmgoI",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://omfa.om/news",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true,
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -464,
+        384
+      ],
+      "id": "38b203e2-f84c-4948-8069-75c24cf8a90b",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "Title",
+              "cssSelector": "h2 a, .news-title, .post-entry h3",
+              "returnArray": true
+            },
+            {
+              "key": "Link",
+              "cssSelector": "h2 a, .news-title, .post-entry h3",
+              "returnValue": "attribute",
+              "attribute": "href",
+              "returnArray": true
+            },
+            {
+              "key": "Image",
+              "cssSelector": "img.attachment-post-thumbnail",
+              "returnValue": "attribute",
+              "attribute": "src",
+              "returnArray": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        -288,
+        384
+      ],
+      "id": "00126849-951c-43d8-a146-36adb612a5db",
+      "name": "HTML"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. سحب النص اللي الإيجنت كتبه\nconst text = $json.output[0].content[0].text;\n\n// 2. تنظيف أي علامات Markdown لو الإيجنت حطها (زي ```json)\nconst cleanText = text.replace(/```json/g, '').replace(/```/g, '').trim();\n\ntry {\n  // 3. تحويل النص لـ JSON حقيقي نقدر نستخدمه\n  const data = JSON.parse(cleanText);\n\n  // 4. إرجاع البيانات في خانات واضحة\n  return [\n    {\n      json: {\n        selected_link: data.selected_link || \"Link not found\",\n        caption_text: data.caption_text || \"No caption provided\",\n        news_headline: data.news_headline || \"No headline\",\n        news_image: data.news_image || \"\"\n      }\n    }\n  ];\n} catch (e) {\n  // لو الإيجنت بعت نص مش JSON سليم، بنطلع النص الأصلي عشان نعرف المشكلة فين\n  return [\n    {\n      json: {\n        error: \"Failed to parse JSON from AI\",\n        raw_text: text\n      }\n    }\n  ];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        320,
+        384
+      ],
+      "id": "e21e6a4a-745a-4a94-8621-d24361f5f93a",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "url": "https://api.pexels.com/v1/search",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "9343OFWjoafQSAidotoUwKsJP9SyDVO4eMv5g9xAu4hE8T8sgfGd1ZXE"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        528,
+        1616
+      ],
+      "id": "99160da9-2c1d-48d8-a452-956932b63dee",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. جلب البيانات من الكود السابق\nlet caption = $json.caption_text;\nlet imageUrl = $json.news_image;\n\n// 2. دالة التلخيص لتويتر (265 حرف)\nfunction shorten(text, maxLen) {\n  if (text.length <= maxLen) return text;\n  return text.substr(0, text.lastIndexOf(' ', maxLen)) + \"...\";\n}\n\nconst shortCaption = shorten(caption, 265);\n\n// 3. تريكة لتجاوز خطأ الأبعاد (إضافة Timestamp للرابط)\n// ساعات ده بيخلي سيرفر بافر يتعامل مع الصورة كأنها طلب جديد ويحل مشكلة الـ Fetch\nlet optimizedImage = imageUrl;\nif (imageUrl && imageUrl.includes('http')) {\n    optimizedImage = imageUrl + (imageUrl.includes('?') ? '&' : '?') + 'v=' + Date.now();\n}\n\nreturn [{\n  json: {\n    ...$json,\n    caption_text: shortCaption,\n    news_image: optimizedImage // الرابط المعدل\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        576,
+        384
+      ],
+      "id": "d9e1e3e3-d6c0-46c4-a475-eaea379b246d",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 10
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -704,
+        384
+      ],
+      "id": "5da9b90a-6abe-4908-a16b-1e54380a72cb",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "12Zx7Gn0rNtgEoWsMjqVFlXH1w9fnbH4s7JDECr2jj1A",
+          "mode": "list",
+          "cachedResultName": "Yarab",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12Zx7Gn0rNtgEoWsMjqVFlXH1w9fnbH4s7JDECr2jj1A/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12Zx7Gn0rNtgEoWsMjqVFlXH1w9fnbH4s7JDECr2jj1A/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        64,
+        688
+      ],
+      "id": "adee98d6-7cbd-4891-acf2-c9364955443c",
+      "name": "Get row(s) in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "arDb2A4JxfJBlaez",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "12Zx7Gn0rNtgEoWsMjqVFlXH1w9fnbH4s7JDECr2jj1A",
+          "mode": "list",
+          "cachedResultName": "Yarab",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12Zx7Gn0rNtgEoWsMjqVFlXH1w9fnbH4s7JDECr2jj1A/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/12Zx7Gn0rNtgEoWsMjqVFlXH1w9fnbH4s7JDECr2jj1A/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Link": "={{ $('Code in JavaScript1').item.json.selected_link }}"
+          },
+          "matchingColumns": [
+            "Link"
+          ],
+          "schema": [
+            {
+              "id": "Link",
+              "displayName": "Link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1088,
+        384
+      ],
+      "id": "4b6bbf4d-7768-423f-ade1-451a050a2460",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "arDb2A4JxfJBlaez",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        []
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "MCP Client",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP Client": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "Message a model",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "saveDataSuccessExecution": "all",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false,
+    "timezone": "Asia/Amman"
+  },
+  "versionId": "369f1a31-06fb-40dc-80ae-f41c9d23b51a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "63fc54770af815f145b9771b7280d33c4c897ef8e1a7c037fc423c03d2741f3e"
+  },
+  "id": "gQ80Wv9heYyNOsBp",
+  "tags": []
+}
